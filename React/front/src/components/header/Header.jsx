@@ -34,10 +34,10 @@ const Header = () => {
       </div>
       <div className='containerHeaderSpan'>
         <span onClick={() => scrollToSection('Habilidades')} className="highlightable">Habilidades</span>
+        <span onClick={() => scrollToSection('Sobre mí')} className="highlightable">Sobre mí</span>
         <span onClick={() => scrollToSection('Proyectos')} className="highlightable">Proyectos</span>
         <span onClick={() => scrollToSection('Experiencia')} className="highlightable">Experiencia</span>
         <span onClick={() => scrollToSection('Certificados')} className="highlightable">Certificados</span>
-        <span onClick={() => scrollToSection('Sobre mí')} className="highlightable">Sobre mí</span>
         <span onClick={() => scrollToSection('Contacto')} className="highlightable">Contacto</span>
       </div>
     </div>
