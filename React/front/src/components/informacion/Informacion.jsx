@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Informacion = () => {
+    const foto = require("../../assets/codeTyping.png")
   return (
     <div className='containerHomeIntroduction'>
         <div className='conainterInfo'>
@@ -23,7 +24,7 @@ const Informacion = () => {
             </div>
           </div>
         </div>
-        <div class="hero-img"></div>
+        <img src={foto} alt="foto de código" className='fotoCodgio' />
       </div>
   )
 }

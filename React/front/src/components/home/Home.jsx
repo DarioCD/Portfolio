@@ -1,6 +1,7 @@
 import React from 'react'
 import Informacion from '../informacion/Informacion';
 import Habilidad from '../habilidad/Habilidad';
+import SobreMi from '../sobreMi/SobreMi';
 
 const Home = () => {
 
@@ -12,6 +13,7 @@ const Home = () => {
     <div className='home'>
       <Informacion/>
       <Habilidad/>
+      <SobreMi/>
     </div>
   )
 }
