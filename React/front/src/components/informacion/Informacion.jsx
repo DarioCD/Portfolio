@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Informacion = () => {
-    const foto = require("../../assets/codeTyping.png")
+    const foto = require("../../assets/fotogolfo.JPG")
   return (
     <div className='containerHomeIntroduction'>
         <div className='conainterInfo'>
