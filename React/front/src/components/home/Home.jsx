@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 const Home = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -35,7 +35,6 @@ const Home = () => {
   const mongo = require("../../assets/mongo.png")
   const mysql = require("../../assets/mysql.png")
   const spring = require("../../assets/spring-boot-logo.png")
-  const aws = require("../../assets/aws.png")
   const docker = require("../../assets/docker.png")
   const git = require("../../assets/git.png")
   return (
@@ -68,118 +67,161 @@ const Home = () => {
           <h2>Habilidades</h2>
         </div>
         <div className='containerImgHabilidades'>
-          <OverlayTrigger
-            overlay={
-              <Tooltip>
-                <span>React</span>
-              </Tooltip>
-            }>
-            {shouldShowImage(100) && <img src={react} alt='foto de React' />}
-          </OverlayTrigger>
-          <OverlayTrigger
-            overlay={
-              <Tooltip>
-                <span>Java</span>
-              </Tooltip>
-            }>
-            {shouldShowImage(100) && <img src={java} alt='foto de Java' />}
-          </OverlayTrigger>
-          <OverlayTrigger
-            overlay={
-              <Tooltip>
-                <span>Spring</span>
-              </Tooltip>
-            }>
-            {shouldShowImage(200) && <img src={spring} alt='foto de Spring' />}
-          </OverlayTrigger>
-          <OverlayTrigger
-            overlay={
-              <Tooltip>
-                <span>Angular</span>
-              </Tooltip>
-            }>
-            {shouldShowImage(300) && <img src={angular} alt='foto de Angular' />}
-          </OverlayTrigger>
-          <OverlayTrigger
-            overlay={
-              <Tooltip>
-                <span>Mysql</span>
-              </Tooltip>
-            }>
-            {shouldShowImage(400) && <img src={mysql} alt='foto de MySQL' />}
-          </OverlayTrigger>
-          <OverlayTrigger
-            overlay={
-              <Tooltip>
-                <span>JavaScript</span>
-              </Tooltip>
-            }>
-            {shouldShowImage(500) && <img src={js} alt='foto de JavaScript' />}
-          </OverlayTrigger>
-          <OverlayTrigger
-            overlay={
-              <Tooltip>
-                <span>HTML</span>
-              </Tooltip>
-            }>
-            {shouldShowImage(600) && <img src={html} alt='foto de Html' />}
-          </OverlayTrigger>
-          <OverlayTrigger
-            overlay={
-              <Tooltip>
-                <span>CSSS</span>
-              </Tooltip>
-            }>
-            {shouldShowImage(750) && <img src={css} alt='foto de CSS' />}
-          </OverlayTrigger>
-          <OverlayTrigger
-            overlay={
-              <Tooltip>
-                <span>Python</span>
-              </Tooltip>
-            }>
-            {shouldShowImage(800) && <img src={pyhton} alt='foto de Python' />}
-          </OverlayTrigger>
-          <OverlayTrigger
-            overlay={
-              <Tooltip>
-                <span>TypeScrpit</span>
-              </Tooltip>
-            }>
-            {shouldShowImage(900) && <img src={typ} alt='foto de TypeScript' />}
-          </OverlayTrigger>
-          <OverlayTrigger
-            overlay={
-              <Tooltip>
-                <span>Node</span>
-              </Tooltip>
-            }>
-            {shouldShowImage(1000) && <img src={node} alt='foto de Node.js' />}
-          </OverlayTrigger>
-          <OverlayTrigger
-            overlay={
-              <Tooltip>
-                <span>MongoDB</span>
-              </Tooltip>
-            }>
-            {shouldShowImage(1100) && <img src={mongo} alt='foto de MongoDB' />}
-          </OverlayTrigger>
-          <OverlayTrigger
-            overlay={
-              <Tooltip>
-                <span>Docker</span>
-              </Tooltip>
-            }>
-            {shouldShowImage(1200) && <img src={docker} alt='foto de Docker' />}
-          </OverlayTrigger>
-          <OverlayTrigger
-            overlay={
-              <Tooltip>
-                <span>Git</span>
-              </Tooltip>
-            }>
-            {shouldShowImage(1200) && <img src={git} alt='foto de Git' />}
-          </OverlayTrigger>
+          {
+            shouldShowImage(100) &&
+            <OverlayTrigger
+              overlay={
+                <Tooltip>
+                  <span>React</span>
+                </Tooltip>
+              }>
+              <img src={react} alt='foto de React' />
+            </OverlayTrigger>
+          }
+          {
+            shouldShowImage(100) &&
+            <OverlayTrigger
+              overlay={
+                <Tooltip>
+                  <span>Java</span>
+                </Tooltip>
+              }>
+              <img src={java} alt='foto de Java' />
+            </OverlayTrigger>
+          }
+          {
+            shouldShowImage(200) &&
+            <OverlayTrigger
+              overlay={
+                <Tooltip>
+                  <span>Spring</span>
+                </Tooltip>
+              }>
+              <img src={spring} alt='foto de Spring' />
+            </OverlayTrigger>
+          }
+          {
+            shouldShowImage(300) &&
+            <OverlayTrigger
+              overlay={
+                <Tooltip>
+                  <span>Angular</span>
+                </Tooltip>
+              }>
+              <img src={angular} alt='foto de Angular' />
+            </OverlayTrigger>
+          }
+          {
+            shouldShowImage(400) &&
+            <OverlayTrigger
+              overlay={
+                <Tooltip>
+                  <span>Mysql</span>
+                </Tooltip>
+              }>
+              <img src={mysql} alt='foto de MySQL' />
+            </OverlayTrigger>
+          }
+          {
+            shouldShowImage(500) &&
+            <OverlayTrigger
+              overlay={
+                <Tooltip>
+                  <span>JavaScript</span>
+                </Tooltip>
+              }>
+              <img src={js} alt='foto de JavaScript' />
+            </OverlayTrigger>
+          }
+          {
+            shouldShowImage(600) &&
+            <OverlayTrigger
+              overlay={
+                <Tooltip>
+                  <span>HTML</span>
+                </Tooltip>
+              }>
+              <img src={html} alt='foto de Html' />
+            </OverlayTrigger>
+          }
+          {
+            shouldShowImage(750) &&
+            <OverlayTrigger
+              overlay={
+                <Tooltip>
+                  <span>CSSS</span>
+                </Tooltip>
+              }>
+              <img src={css} alt='foto de CSS' />
+            </OverlayTrigger>
+          }
+          {
+            shouldShowImage(800) &&
+            <OverlayTrigger
+              overlay={
+                <Tooltip>
+                  <span>Python</span>
+                </Tooltip>
+              }>
+              <img src={pyhton} alt='foto de Python' />
+            </OverlayTrigger>
+          }
+          {
+            shouldShowImage(900) &&
+            <OverlayTrigger
+              overlay={
+                <Tooltip>
+                  <span>TypeScrpit</span>
+                </Tooltip>
+              }>
+              <img src={typ} alt='foto de TypeScript' />
+            </OverlayTrigger>
+          }
+          {
+            shouldShowImage(1000) &&
+            <OverlayTrigger
+              overlay={
+                <Tooltip>
+                  <span>Node</span>
+                </Tooltip>
+              }>
+              <img src={node} alt='foto de Node.js' />
+            </OverlayTrigger>
+          }
+          {
+            shouldShowImage(1100) &&
+            <OverlayTrigger
+              overlay={
+                <Tooltip>
+                  <span>MongoDB</span>
+                </Tooltip>
+              }>
+              <img src={mongo} alt='foto de MongoDB' />
+            </OverlayTrigger>
+
+          }
+          {
+            shouldShowImage(1200) &&
+            <OverlayTrigger
+              overlay={
+                <Tooltip>
+                  <span>Docker</span>
+                </Tooltip>
+              }>
+              <img src={docker} alt='foto de Docker' />
+            </OverlayTrigger>
+          }
+          {
+            shouldShowImage(1200) &&
+            <OverlayTrigger
+              overlay={
+                <Tooltip>
+                  <span>Git</span>
+                </Tooltip>
+              }>
+              <img src={git} alt='foto de Git' />
+            </OverlayTrigger>
+          }
         </div>
       </div>
     </div>
