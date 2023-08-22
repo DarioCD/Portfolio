@@ -4,7 +4,7 @@ const SobreMi = () => {
   return (
     <div className="containerSobreMi" id="Sobre mi">
       <div>
-        <div class="hero-img"></div>
+        <div className="hero-img"></div>
       </div>
       <div className="containerInformacioSobreMi">
         <h2>Sobre mí</h2>

@@ -2,6 +2,7 @@ import React from 'react'
 import Informacion from '../informacion/Informacion';
 import Habilidad from '../habilidad/Habilidad';
 import SobreMi from '../sobreMi/SobreMi';
+import Proyecto from '../proyecto/Proyecto';
 
 const Home = () => {
 
@@ -14,6 +15,7 @@ const Home = () => {
       <Informacion/>
       <Habilidad/>
       <SobreMi/>
+      <Proyecto/>
     </div>
   )
 }
