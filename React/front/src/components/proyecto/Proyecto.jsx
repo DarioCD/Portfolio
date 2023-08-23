@@ -1,6 +1,6 @@
 import React from "react";
 
-const Proyecto = () => {
+const Proyecto = ({ windowWidth }) => {
   const foto = require("../../assets/coming-soon.jpg");
   return (
     <div className="containerProyectos" id="Proyectos">
@@ -41,6 +41,10 @@ const Proyecto = () => {
       </div>
       <div className="containerCardProyectos">
         <div className="cardProyecto">
+          {
+            windowWidth <= 800 &&
+            <img src={foto} alt="foto" className="fotoProyecto" />
+          }
           <div className="infoProyecto">
             <h3>Fight Club</h3>
             <p>
@@ -64,12 +68,15 @@ const Proyecto = () => {
                 href="https://github.com/DarioCD"
                 target="blank"
               >
-                <p>Ver página</p>{" "}
+                <p>Ver página</p>
                 <div className="fotoEnlaceLink" alt="ver página"></div>
               </a>
             </div>
           </div>
-          <img src={foto} alt="foto" className="fotoProyecto" />
+          {
+            windowWidth > 800 &&
+            <img src={foto} alt="foto" className="fotoProyecto" />
+          }
         </div>
       </div>
       <div className="containerCardProyectos">
@@ -107,6 +114,10 @@ const Proyecto = () => {
       </div>
       <div className="containerCardProyectos">
         <div className="cardProyecto">
+          {
+            windowWidth <= 800 &&
+            <img src={foto} alt="foto" className="fotoProyecto" />
+          }
           <div className="infoProyecto">
             <h3>Fight Club</h3>
             <p>
@@ -135,7 +146,10 @@ const Proyecto = () => {
               </a>
             </div>
           </div>
-          <img src={foto} alt="foto" className="fotoProyecto" />
+          {
+            windowWidth > 800 &&
+            <img src={foto} alt="foto" className="fotoProyecto" />
+          }
         </div>
       </div>
     </div>

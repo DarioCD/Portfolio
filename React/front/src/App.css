@@ -9,6 +9,12 @@
   );
   --github: url("./assets/github.png");
   --link: url("./assets/link.png");
+  --primary-bg: #242526;
+  --secondary-bg: #fff;
+  --primary-text-color: #555;
+  --secondary-text-color: #cecece;
+  --border-radius: 8px;
+  --speed: 500ms;
 }
 
 .dark-mode {
@@ -32,6 +38,97 @@ body {
   transition: background-image 0.5s ease;
 }
 
+/* Dropdwon style */
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.menu-trigger img {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 90px;
+  right: 10px;
+  background-color: var(--blurFondoHeader);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.5s ease;
+  border-radius: var(--border-radius);
+  padding: 10px 20px;
+  width: 250px;
+}
+
+.dropdown-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: var(--speed) ease;
+}
+
+.dropdown-menu.inactive {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: var(--speed) ease;
+}
+
+h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  padding: 15px 0;
+  font-weight: 500;
+  color: var(--colorLetras);
+  line-height: 1.2rem;
+}
+
+.dropdown-menu ul li {
+  color: var(--colorLetras);
+  padding: 10px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  cursor: pointer;
+  transition: text-shadow 0.3s, font-size 0.3s, margin-inline 0.3s;
+}
+
+.dropdown-menu ul li:hover a {
+  text-shadow: 0 0 5px rgba(255, 0, 0, 1);
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.dropdownItem {
+  display: flex;
+  margin: 10px auto;
+}
+
+.dropdownItem img {
+  max-width: 20px;
+  margin-right: 10px;
+  opacity: 0.5;
+  transition: var(--speed);
+}
+
+.dropdownItem span {
+  max-width: 150px;
+  margin-left: 10px;
+  transition: var(--speed);
+}
+
 span,
 h2 {
   color: var(--colorLetras);
@@ -45,16 +142,16 @@ h2 {
   top: 0;
   left: 0;
   width: 100%;
-  transition: background-color 0.3s ease, backdrop-filter 0.3s ease; /* Transiciones suaves */
-  z-index: 1000; /* Asegura que el header esté por encima del contenido */
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+  z-index: 1000;
   padding-block: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .header.scrolled {
-  background-color: var(--blurFondoHeader); /* Fondo semitransparente */
-  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+  background-color: var(--blurFondoHeader);
+  backdrop-filter: blur(10px);
   transition: background-color 0.5s ease;
 }
 
@@ -218,8 +315,17 @@ h2 {
   max-width: 600px;
 }
 .fotoCodgio {
-  height: 30rem;
-  border: 3px solid #2d2e32;
+  flex: 1;
+  max-width: 100%;
+  display: flex;
+  max-height: 100%;
+  justify-content: center;
+  margin-left: 30px;
+}
+
+.fotoCodgio img {
+  max-width: 80%;
+  height: auto;
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   animation: borderRise 9s ease-in-out infinite;
 }
@@ -238,10 +344,11 @@ h2 {
   -webkit-animation: morph 8s ease-in-out infinite;
   animation: morph 8s ease-in-out infinite;
   background-image: url(./assets/foto_perfil.png);
-  background-position: 50%;
-  background-repeat: no-repeat;
+  width: 35rem;
+  height: 35rem;
   background-size: cover;
-  border: 3px solid #2d2e32;
+  background-position: center center;
+  background-repeat: no-repeat;
   border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
   height: 30rem;
   position: relative;
@@ -265,6 +372,10 @@ h2 {
   100% {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
+}
+
+.conainterInfo {
+  flex: 1;
 }
 
 .card {
@@ -381,6 +492,7 @@ h2 {
   margin-top: 10rem;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-evenly;
 }
 
@@ -394,6 +506,7 @@ h2 {
   justify-content: center;
   padding-inline: 20px;
   transition: background-color 0.5s ease;
+  margin-left: 20px;
 }
 .containerInformacioSobreMi p {
   color: var(--colorLetras);
@@ -413,7 +526,7 @@ h2 {
   margin-top: 10rem;
 }
 
-.containerProyectosp  {
+.containerProyectosp {
   margin-bottom: 3rem;
 }
 .containerCardProyectos {
@@ -444,7 +557,6 @@ h2 {
   border-radius: 20px;
 }
 .cardProyecto {
-  width: 70%;
   border-radius: 20px;
   display: flex;
   padding: 20px;
@@ -530,7 +642,7 @@ h2 {
   background-color: #64a4af;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .containerHabilidades {
     background-color: var(--blurFondo);
     -webkit-backdrop-filter: blur(10px);
@@ -539,6 +651,63 @@ h2 {
     align-items: center;
     flex-direction: column;
     transition: background-color 0.5s ease;
+  }
+
+  .home {
+    margin-inline: 20px;
+  }
+  .containerHomeIntroduction {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .containerSpan {
+    max-width: 100%;
+  }
+
+  .conainterInfo {
+    flex: 0;
+  }
+
+  .cardProyectoEnalce {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1000px) {
+  .containerSobreMi {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .containerInformacioSobreMi {
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+
+  .hero-img {
+    height: 24rem;
+    width: 24rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .cardProyecto:hover {
+    transform: scale(1.02);
+  }
+  .cardProyecto {
+    flex-direction: column;
+  }
+
+  .fotoProyecto {
+    width: 100%;
+    border-radius: 20px;
   }
 }
 

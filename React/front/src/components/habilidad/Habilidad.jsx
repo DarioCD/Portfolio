@@ -5,15 +5,11 @@ const Habilidad = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    // Función para manejar el cambio en el ancho de la ventana
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
-
-    // Agregar un listener al evento resize
     window.addEventListener("resize", handleResize);
 
-    // Limpiar el listener cuando el componente se desmonta
     return () => {
       window.removeEventListener("resize", handleResize);
     };

@@ -1,21 +1,18 @@
-import React from 'react'
-import Informacion from '../informacion/Informacion';
+import React from 'react';
 import Habilidad from '../habilidad/Habilidad';
-import SobreMi from '../sobreMi/SobreMi';
+import Informacion from '../informacion/Informacion';
 import Proyecto from '../proyecto/Proyecto';
+import SobreMi from '../sobreMi/SobreMi';
 
-const Home = () => {
 
-
+const Home = ({windowWidth}) => {
   
-
-
   return (
     <div className='home'>
-      <Informacion/>
-      <Habilidad/>
-      <SobreMi/>
-      <Proyecto/>
+      <Informacion windowWidth ={windowWidth}/>
+      <Habilidad windowWidth ={windowWidth}/>
+      <SobreMi windowWidth ={windowWidth}/>
+      <Proyecto windowWidth ={windowWidth}/>
     </div>
   )
 }
