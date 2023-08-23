@@ -9,6 +9,8 @@
   );
   --github: url("./assets/github.png");
   --link: url("./assets/link.png");
+  --email: url("./assets/correo-electronico_2.png");
+  --phone: url("./assets/telefono_2.png");
   --primary-bg: #242526;
   --secondary-bg: #fff;
   --primary-text-color: #555;
@@ -28,6 +30,8 @@
   );
   --github: url("./assets/github_negro.png");
   --link: url("./assets/link_negro.png");
+  --email: url("./assets/correo-electronico.png");
+  --phone: url("./assets/telefono.png");
 }
 body {
   background-image: var(--fondo);
@@ -293,14 +297,14 @@ h2 {
 .containerSpanName {
   display: inline;
 }
-
-.containerSpanName h1 {
+h1 {
   background-image: var(--textGrandeColor);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   transition: background-image 0.5s ease;
 }
+
 .containerHomeIntroduction {
   height: 100vh;
   display: flex;
@@ -391,8 +395,8 @@ h2 {
 
 /* for all social containers*/
 .socialContainer {
-  width: 52px;
-  height: 52px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   background-color: rgb(44, 44, 44);
   display: flex;
@@ -428,7 +432,8 @@ h2 {
 }
 
 .socialSvg {
-  width: 17px;
+  width: 30px;
+  height: 30px;
 }
 
 .socialSvg path {
@@ -596,7 +601,7 @@ h2 {
 .highlightableProyecto {
   position: relative;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
   padding-block: 5px;
   padding-inline: 20px;
   border-radius: 5px;
@@ -631,6 +636,151 @@ h2 {
   transition: background-image 0.5s ease;
 }
 
+/* Experiencia */
+* {
+  box-sizing: border-box;
+}
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 100px auto;
+}
+
+.containerExperiencia {
+  padding: 10px 50px;
+  position: relative;
+  width: 50%;
+  animation: movedown 1s linear forwards;
+  opacity: 0;
+}
+
+@keyframes movedown {
+  0% {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.containerExperiencia:nth-child(1) {
+  animation-delay: 0s;
+}
+.containerExperiencia:nth-child(2) {
+  animation-delay: 1s;
+}
+.containerExperiencia:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.left-containerExperiencia {
+  left: 0;
+}
+.right-containerExperiencia {
+  left: 50%;
+}
+.right-containerExperiencia img {
+  left: -20px;
+}
+.containerExperiencia img {
+  position: absolute;
+  width: 40px;
+  border-radius: 50%;
+  right: -20px;
+  top: 32px;
+  z-index: 10;
+}
+
+.right-containerExperiencia img {
+  width: 40px;
+  height: 40px;
+}
+
+.text-box ul {
+  color: var(--colorLetras);
+  transition: color 0.5s ease;
+}
+
+.text-box {
+  padding: 20px 30px;
+  background-color: var(--blurFondo);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
+  position: relative;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: background-color 0.5s ease;
+}
+
+.text-box li {
+  margin-top: 10px;
+}
+
+.text-box h2 {
+  font-weight: 600;
+  color: var(--colorLetras);
+  transition: color 0.5s ease;
+}
+.text-box small {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: var(--colorLetras);
+  transition: color 0.5s ease;
+}
+.text-box p {
+  color: var(--colorLetras);
+  transition: color 0.5s ease;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background-color: var(--colorLetras);
+  top: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: -1;
+  animation: moveline 3s linear forwards;
+  transition: background-color 0.5s ease;
+}
+
+@keyframes moveline {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+.left-containerExperiencia-arow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid var(--blurFondo);
+  right: -14px;
+  transition: border-left 0.5s ease;
+}
+
+.right-containerExperiencia-arow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid var(--blurFondo);
+  left: -14px;
+  transition: border-right 0.5s ease;
+}
 /* Footer */
 
 .footer {
@@ -638,8 +788,81 @@ h2 {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 350px;
-  background-color: #64a4af;
+  height: 300px;
+  background-color: var(--blurFondo);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.5s ease;
+  flex-direction: column;
+  padding-inline: 100px;
+}
+
+.footer h1 {
+  margin-top: 20px;
+}
+
+.footerEmail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.containerFooter {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+.cardFooter {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  box-shadow: 0px 0px 20px rgba(181, 181, 181 0.055);
+  flex-direction: row;
+}
+.fotoEmail {
+  width: 65px;
+  height: 65px;
+  background-image: var(--email);
+  background-size: cover;
+  transition: background-image 0.5s ease;
+}
+
+.footerEmail div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-inline: 20px;
+  margin-block: 3px;
+}
+
+.footerEmail a {
+  color: var(--colorLetras);
+  transition: background-color 0.5s ease;
+  font-size: 30px;
+}
+
+.footerEmail a:hover{
+  color : lightblue
+}
+
+.footerEmail p {
+  color: var(--colorLetras);
+  transition: background-color 0.5s ease;
+  font-size: 30px;
+  margin: 0px;
+}
+
+.fotoPhone {
+  width: 65px;
+  height: 65px;
+  background-image: var(--phone);
+  background-size: cover;
+  transition: background-image 0.5s ease;
 }
 
 @media (max-width: 800px) {
@@ -708,6 +931,41 @@ h2 {
   .fotoProyecto {
     width: 100%;
     border-radius: 20px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .timeline {
+    margin: 50px auto;
+  }
+  .timeline::after {
+    left: 31px;
+  }
+  .containerExperiencia {
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 25px;
+  }
+  .text-box {
+    font-size: 13px;
+  }
+  .text-box small {
+    margin-bottom: 10px;
+  }
+  .right-containerExperiencia {
+    left: 0;
+  }
+
+  .left-containerExperiencia img,
+  .right-containerExperiencia img {
+    left: 10px;
+  }
+
+  .left-containerExperiencia-arow,
+  .right-containerExperiencia-arow {
+    border-right: 15px solid var(--blurFondo);
+    border-left: 0;
+    left: -14px;
   }
 }
 

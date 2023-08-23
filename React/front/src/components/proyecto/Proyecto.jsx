@@ -4,7 +4,7 @@ const Proyecto = ({ windowWidth }) => {
   const foto = require("../../assets/coming-soon.jpg");
   return (
     <div className="containerProyectos" id="Proyectos">
-      <h2>Proyectos</h2>
+      <h1>Proyectos</h1>
       <p className="containerProyectosp">En este espacio, encontrarás una muestra de mis trabajos</p>
       <div className="containerCardProyectos">
         <div className="cardProyecto">
@@ -42,7 +42,7 @@ const Proyecto = ({ windowWidth }) => {
       <div className="containerCardProyectos">
         <div className="cardProyecto">
           {
-            windowWidth <= 800 &&
+            windowWidth <= 1100 &&
             <img src={foto} alt="foto" className="fotoProyecto" />
           }
           <div className="infoProyecto">
@@ -74,7 +74,7 @@ const Proyecto = ({ windowWidth }) => {
             </div>
           </div>
           {
-            windowWidth > 800 &&
+            windowWidth > 1100 &&
             <img src={foto} alt="foto" className="fotoProyecto" />
           }
         </div>
@@ -115,7 +115,7 @@ const Proyecto = ({ windowWidth }) => {
       <div className="containerCardProyectos">
         <div className="cardProyecto">
           {
-            windowWidth <= 800 &&
+            windowWidth <= 1100 &&
             <img src={foto} alt="foto" className="fotoProyecto" />
           }
           <div className="infoProyecto">
@@ -147,7 +147,7 @@ const Proyecto = ({ windowWidth }) => {
             </div>
           </div>
           {
-            windowWidth > 800 &&
+            windowWidth > 1100 &&
             <img src={foto} alt="foto" className="fotoProyecto" />
           }
         </div>

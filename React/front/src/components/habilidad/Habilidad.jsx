@@ -37,7 +37,7 @@ const Habilidad = () => {
   return (
     <div className="containerHabilidades" id="Habilidades">
       <div className="containerSpanHabilidades">
-        <h2>Habilidades</h2>
+        <h1>Habilidades</h1>
       </div>
       <div className="containerImgHabilidades">
         {shouldShowImage(100) && (
