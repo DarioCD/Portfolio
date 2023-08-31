@@ -6,15 +6,15 @@ import SobreMi from '../sobreMi/SobreMi';
 import Experiencia from '../experiencia/Experiencia';
 
 
-const Home = ({ windowWidth }) => {
+const Home = ({ windowWidth, languaje }) => {
 
   return (
-    <div className='home'>
-      <Informacion windowWidth={windowWidth} />
-      <Habilidad windowWidth={windowWidth} />
-      <SobreMi windowWidth={windowWidth} />
-      <Proyecto windowWidth={windowWidth} />
-      <Experiencia windowWidth={windowWidth} />
+    <div className='home' id='Inicio'>
+      <Informacion windowWidth={windowWidth} languaje={languaje} />
+      <Habilidad windowWidth={windowWidth} languaje={languaje} />
+      <SobreMi windowWidth={windowWidth} languaje={languaje} />
+      <Proyecto windowWidth={windowWidth} languaje={languaje} />
+      <Experiencia windowWidth={windowWidth} languaje={languaje} />
     </div>
   )
 }

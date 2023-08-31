@@ -6,6 +6,7 @@ import Footer from '../footer/Footer'
 const PortfolioApp = () => {
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [languaje, setLanguaje] = useState(true);
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -18,9 +19,9 @@ const PortfolioApp = () => {
   }, []);
   return (
     <div>
-        <Header windowWidth={windowWidth}/>
-        <Home windowWidth={windowWidth}/>
-        <Footer/>
+      <Header windowWidth={windowWidth} setLanguaje={setLanguaje} languaje={languaje} />
+      <Home windowWidth={windowWidth} languaje={languaje} />
+      <Footer languaje={languaje} />
     </div>
   )
 }

@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 
 
-const Header = ({windowWidth}) => {
+const Header = ({ windowWidth, setLanguaje, languaje }) => {
+
+  const cvPdf = require("../../assets/CV-Darío Chinea Delgado.pdf")
 
 
   // Dropdown
-  const fotoPortada = require("../../assets/favicon.png")
   const [open, setOpen] = useState(false);
   let menuRef = useRef();
   useEffect(() => {
@@ -61,47 +62,113 @@ const Header = ({windowWidth}) => {
     document.body.classList.toggle("dark-mode");
   };
 
+  const toggleLanguaje = () => {
+    setLanguaje(!languaje)
+  };
+
   return (
     <div className="header" id="header">
       {windowWidth >= 800 ?
         <>
+          <div className="containerLanguaje">
+            <span>es</span>
+            <label className="switch">
+              <input type="checkbox" className="input" onClick={toggleLanguaje} />
+              <span className="slider"></span>
+            </label>
+            <span>en</span>
+          </div>
           <div className="containerHeaderSpan">
-            <span
-              onClick={() => scrollToSection("Habilidades")}
-              className="highlightable"
-            >
-              Habilidades
-            </span>
-            <span
-              onClick={() => scrollToSection("Sobre mi")}
-              className="highlightable"
-            >
-              Sobre mí
-            </span>
-            <span
-              onClick={() => scrollToSection("Proyectos")}
-              className="highlightable"
-            >
-              Proyectos
-            </span>
-            <span
-              onClick={() => scrollToSection("Experiencia")}
-              className="highlightable"
-            >
-              Experiencia
-            </span>
-            <span
-              onClick={() => scrollToSection("Certificados")}
-              className="highlightable"
-            >
-              Certificados
-            </span>
-            <span
-              onClick={() => scrollToSection("Contacto")}
-              className="highlightable"
-            >
-              Contacto
-            </span>
+            {
+              languaje ?
+                <>
+                  <span
+                    onClick={() => scrollToSection("Habilidades")}
+                    className="highlightable"
+                  >
+                    Habilidades
+                  </span>
+                  <span
+                    onClick={() => scrollToSection("Sobre mi")}
+                    className="highlightable"
+                  >
+                    Sobre mí
+                  </span>
+                  <span
+                    onClick={() => scrollToSection("Proyectos")}
+                    className="highlightable"
+                  >
+                    Proyectos
+                  </span>
+                  <span
+                    onClick={() => scrollToSection("Experiencia")}
+                    className="highlightable"
+                  >
+                    Experiencia
+                  </span>
+                  {/* <span
+                    onClick={() => scrollToSection("Certificados")}
+                    className="highlightable"
+                  >
+                    Certificados
+                  </span> */}
+                  <span
+                    onClick={() => scrollToSection("Contacto")}
+                    className="highlightable"
+                  >
+                    Contacto
+                  </span>
+                  <a href={cvPdf} download={"CV - Darío Chinea Delgado"} className="highlightable">
+                    <span>
+                      Desargar CV
+                    </span>
+                  </a>
+                </>
+                :
+                <>
+                  <span
+                    onClick={() => scrollToSection("Habilidades")}
+                    className="highlightable"
+                  >
+                    Skills
+                  </span>
+                  <span
+                    onClick={() => scrollToSection("Sobre mi")}
+                    className="highlightable"
+                  >
+                    About me
+                  </span>
+                  <span
+                    onClick={() => scrollToSection("Proyectos")}
+                    className="highlightable"
+                  >
+                    Projects
+                  </span>
+                  <span
+                    onClick={() => scrollToSection("Experiencia")}
+                    className="highlightable"
+                  >
+                    Experience
+                  </span>
+                  {/* <span
+                    onClick={() => scrollToSection("Certificados")}
+                    className="highlightable"
+                  >
+                    Certificates
+                  </span> */}
+                  <span
+                    onClick={() => scrollToSection("Contacto")}
+                    className="highlightable"
+                  >
+                    Contact me
+                  </span>
+                  <a href={cvPdf} download={"CV - Darío Chinea Delgado"} className="highlightable">
+                    <span>
+                      Download CV
+                    </span>
+                  </a>
+                </>
+            }
           </div>
           <label className="switch">
             <span className="sun">
@@ -122,43 +189,117 @@ const Header = ({windowWidth}) => {
           </label>
         </>
         :
-        <div className='menu-container' ref={menuRef}>
-          <div className='menu-trigger' onClick={() => { setOpen(!open) }}>
-            <img src={fotoPortada} alt='imagen de DropDown'></img>
+        <>
+          <p onClick={() => scrollToSection("Inicio")} className="headerNombre">Dario chinea delgado</p>
+          <div className='menu-container' ref={menuRef}>
+            <label htmlFor="burger" className="burger">
+              <input id="burger" type="checkbox" onClick={() => { setOpen(!open) }} />
+              <span></span>
+              <span></span>
+              <span></span>
+            </label>
+            <div className={`dropdown-menu ${open ? 'active' : 'inactive'}`} >
+              {
+                languaje
+                  ?
+                  <>
+                    <h3>Navegación<br /></h3>
+                    <ul onClick={() => scrollToSection("Habilidades")}>
+                      <DropdownItem text={"Habilidades"} />
+                    </ul>
+                    <ul onClick={() => scrollToSection("Sobre mi")}>
+                      <DropdownItem text={"Sobre mí"} />
+                    </ul>
+                    <ul onClick={() => scrollToSection("Proyectos")}>
+                      <DropdownItem text={"Proyectos"} />
+                    </ul>
+                    <ul onClick={() => scrollToSection("Experiencia")}>
+                      <DropdownItem text={"Experiencia"} />
+                    </ul>
+                    {/* <ul onClick={() => scrollToSection("Certificados")}>
+                      <DropdownItem text={"Certificados"} />
+                    </ul> */}
+                    <ul onClick={() => scrollToSection("Contacto")}>
+                      <DropdownItem text={"Contacto"} />
+                    </ul>
+                    {
+                      darkMode
+                        ?
+                        <ul onClick={toggleDarkMode}>
+                          <DropdownItem text={"Modo oscuro"} />
+                        </ul>
+                        :
+                        <ul onClick={toggleDarkMode}>
+                          <DropdownItem text={"Modo claro"} />
+                        </ul>
+                    }
+                    <ul>
+                      <li>
+                        <a href={cvPdf} download={"CV - Darío Chinea Delgado"}>
+                          <span>
+                            Descargar CV
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </>
+                  :
+                  <>
+                    <h3>Navigation<br /></h3>
+                    <ul onClick={() => scrollToSection("Habilidades")}>
+                      <DropdownItem text={"Skills"} />
+                    </ul>
+                    <ul onClick={() => scrollToSection("Sobre mi")}>
+                      <DropdownItem text={"About me"} />
+                    </ul>
+                    <ul onClick={() => scrollToSection("Proyectos")}>
+                      <DropdownItem text={"Projects"} />
+                    </ul>
+                    <ul onClick={() => scrollToSection("Experiencia")}>
+                      <DropdownItem text={"Experience"} />
+                    </ul>
+                    {/* <ul onClick={() => scrollToSection("Certificados")}>
+                      <DropdownItem text={"Certificates"} />
+                    </ul> */}
+                    <ul onClick={() => scrollToSection("Contacto")}>
+                      <DropdownItem text={"Contact me"} />
+                    </ul>
+                    {
+                      darkMode
+                        ?
+                        <ul onClick={toggleDarkMode}>
+                          <DropdownItem text={"Modo oscuro"} />
+                        </ul>
+                        :
+                        <ul onClick={toggleDarkMode}>
+                          <DropdownItem text={"Modo claro"} />
+                        </ul>
+                    }
+                    <ul>
+                      <li>
+                        <a href={cvPdf} download={"CV - Darío Chinea Delgado"}>
+                          <span>
+                            Download CV
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </>
+              }
+              {
+                languaje
+                  ?
+                  <ul onClick={toggleLanguaje}>
+                    <DropdownItem text={"Change to english"} />
+                  </ul>
+                  :
+                  <ul onClick={toggleLanguaje}>
+                    <DropdownItem text={"Cambiar a español"} />
+                  </ul>
+              }
+            </div>
           </div>
-          <div className={`dropdown-menu ${open ? 'active' : 'inactive'}`} >
-            <h3>Navegación<br /></h3>
-            <ul onClick={() => scrollToSection("Habilidades")}>
-              <DropdownItem text={"Habilidades"} />
-            </ul>
-            <ul onClick={() => scrollToSection("Sobre mi")}>
-              <DropdownItem text={"Sobre mí"} />
-            </ul>
-            <ul onClick={() => scrollToSection("Proyectos")}>
-              <DropdownItem text={"Proyectos"} />
-            </ul>
-            <ul onClick={() => scrollToSection("Experiencia")}>
-              <DropdownItem text={"Experiencia"} />
-            </ul>
-            <ul onClick={() => scrollToSection("Certificados")}>
-              <DropdownItem text={"Certificados"} />
-            </ul>
-            <ul onClick={() => scrollToSection("Contacto")}>
-              <DropdownItem text={"Contacto"} />
-            </ul>
-            {
-              darkMode
-                ?
-                <ul onClick={toggleDarkMode}>
-                  <DropdownItem text={"Modo oscuro"} />
-                </ul>
-                :
-                <ul onClick={toggleDarkMode}>
-                  <DropdownItem text={"Modo claro"} />
-                </ul>
-            }
-          </div>
-        </div>
+        </>
       }
     </div >
   );

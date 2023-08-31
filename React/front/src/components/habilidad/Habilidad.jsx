@@ -1,24 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
-const Habilidad = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const shouldShowImage = (minWidth) => {
-    return windowWidth >= minWidth;
-  };
-
+const Habilidad = ({ languaje }) => {
   const html = require("../../assets/html.png");
   const css = require("../../assets/css-3.png");
   const react = require("../../assets/physics.png");
@@ -37,161 +20,167 @@ const Habilidad = () => {
   return (
     <div className="containerHabilidades" id="Habilidades">
       <div className="containerSpanHabilidades">
-        <h1>Habilidades</h1>
+        {
+          languaje
+            ?
+            <h1>Habilidades</h1>
+            :
+            <h1>Skills</h1>
+        }
       </div>
       <div className="containerImgHabilidades">
-        {shouldShowImage(100) && (
+        {(
           <OverlayTrigger
             overlay={
               <Tooltip>
-                <span>React</span>
+                <span className="tootltip">React</span>
               </Tooltip>
             }
           >
-            <img src={react} alt="foto de React" />
+            <img src={react} alt="foto de React" loading="lazy" />
           </OverlayTrigger>
         )}
-        {shouldShowImage(100) && (
+        {(
           <OverlayTrigger
             overlay={
               <Tooltip>
-                <span>Java</span>
+                <span className="tootltip">Java</span>
               </Tooltip>
             }
           >
-            <img src={java} alt="foto de Java" />
+            <img src={java} alt="foto de Java" loading="lazy" />
           </OverlayTrigger>
         )}
-        {shouldShowImage(200) && (
+        {(
           <OverlayTrigger
             overlay={
               <Tooltip>
-                <span>Spring</span>
+                <span className="tootltip">Spring</span>
               </Tooltip>
             }
           >
-            <img src={spring} alt="foto de Spring" />
+            <img src={spring} alt="foto de Spring" loading="lazy" />
           </OverlayTrigger>
         )}
-        {shouldShowImage(300) && (
+        {(
           <OverlayTrigger
             overlay={
               <Tooltip>
-                <span>Angular</span>
+                <span className="tootltip">Angular</span>
               </Tooltip>
             }
           >
-            <img src={angular} alt="foto de Angular" />
+            <img src={angular} alt="foto de Angular" loading="lazy" />
           </OverlayTrigger>
         )}
-        {shouldShowImage(400) && (
+        {(
           <OverlayTrigger
             overlay={
               <Tooltip>
-                <span>Mysql</span>
+                <span className="tootltip">Mysql</span>
               </Tooltip>
             }
           >
-            <img src={mysql} alt="foto de MySQL" />
+            <img src={mysql} alt="foto de MySQL" loading="lazy" />
           </OverlayTrigger>
         )}
-        {shouldShowImage(500) && (
+        {(
           <OverlayTrigger
             overlay={
               <Tooltip>
-                <span>JavaScript</span>
+                <span className="tootltip">JavaScript</span>
               </Tooltip>
             }
           >
-            <img src={js} alt="foto de JavaScript" />
+            <img src={js} alt="foto de JavaScript" loading="lazy" />
           </OverlayTrigger>
         )}
-        {shouldShowImage(600) && (
+        {(
           <OverlayTrigger
             overlay={
               <Tooltip>
-                <span>HTML</span>
+                <span className="tootltip">HTML</span>
               </Tooltip>
             }
           >
-            <img src={html} alt="foto de Html" />
+            <img src={html} alt="foto de Html" loading="lazy" />
           </OverlayTrigger>
         )}
-        {shouldShowImage(750) && (
+        {(
           <OverlayTrigger
             overlay={
               <Tooltip>
-                <span>CSSS</span>
+                <span className="tootltip">CSS</span>
               </Tooltip>
             }
           >
-            <img src={css} alt="foto de CSS" />
+            <img src={css} alt="foto de CSS" loading="lazy" />
           </OverlayTrigger>
         )}
-        {shouldShowImage(800) && (
+        {(
           <OverlayTrigger
             overlay={
               <Tooltip>
-                <span>Python</span>
+                <span className="tootltip">Python</span>
               </Tooltip>
             }
           >
-            <img src={pyhton} alt="foto de Python" />
+            <img src={pyhton} alt="foto de Python" loading="lazy" />
           </OverlayTrigger>
         )}
-        {shouldShowImage(900) && (
+        {(
           <OverlayTrigger
             overlay={
               <Tooltip>
-                <span>TypeScrpit</span>
+                <span className="tootltip">TypeScrpit</span>
               </Tooltip>
             }
           >
-            <img src={typ} alt="foto de TypeScript" />
+            <img src={typ} alt="foto de TypeScript" loading="lazy" />
           </OverlayTrigger>
         )}
-        {shouldShowImage(1000) && (
+        {(
           <OverlayTrigger
             overlay={
               <Tooltip>
-                <span>Node</span>
+                <span className="tootltip">Node</span>
               </Tooltip>
             }
           >
-            <img src={node} alt="foto de Node.js" />
+            <img src={node} alt="foto de Node.js" loading="lazy" />
           </OverlayTrigger>
         )}
-        {shouldShowImage(1100) && (
+        {(
           <OverlayTrigger
             overlay={
               <Tooltip>
-                <span>MongoDB</span>
+                <span className="tootltip">MongoDB</span>
               </Tooltip>
             }
           >
-            <img src={mongo} alt="foto de MongoDB" />
+            <img src={mongo} alt="foto de MongoDB" loading="lazy" />
           </OverlayTrigger>
         )}
-        {shouldShowImage(1200) && (
+        {(
           <OverlayTrigger
             overlay={
               <Tooltip>
-                <span>Docker</span>
+                <span className="tootltip">Docker</span>
               </Tooltip>
             }
           >
-            <img src={docker} alt="foto de Docker" />
+            <img src={docker} alt="foto de Docker" loading="lazy" />
           </OverlayTrigger>
         )}
-        {shouldShowImage(1200) && (
+        {(
           <OverlayTrigger
             overlay={
               <Tooltip>
-                <span>Git</span>
+                <span className="tootltip">Git</span>
               </Tooltip>
             }
           >
-            <img src={git} alt="foto de Git" />
+            <img src={git} alt="foto de Git" loading="lazy" />
           </OverlayTrigger>
         )}
       </div>
